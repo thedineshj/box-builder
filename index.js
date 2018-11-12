@@ -137,14 +137,3 @@ class automateBuilder {
 
 let ab = new automateBuilder();
 ab.initialize();
-
-/*
-
-to get rid of powered by 000webhost
-
-*/
-
-window.onload = () => {
-    let el = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
-    el.parentNode.removeChild(el);
-}
