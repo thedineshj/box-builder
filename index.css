@@ -1,0 +1,189 @@
+body {
+    background: black;
+    margin: 0 auto;
+    color: #FCE205;
+}
+
+div.main-container {
+    padding: 2em 0 2em 0;
+    margin: 3em auto 3em auto;
+    width: 80%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+}
+
+h2 {
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+}
+
+
+/*
+button styles and animations
+*/
+
+button,
+button::after {
+    transition: all ease-out 0.2s;
+}
+
+button {
+    margin: 1em;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bolder;
+    letter-spacing: 0.2em;
+    background: none;
+    color: #FCE205;
+    border: 1px solid #FCE205;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+button#add-box::before,
+button#add-box::after {
+    background: green;
+}
+
+button#remove-box::before,
+button#remove-box::after {
+    background: red;
+}
+
+button:hover {
+    color: #FCE205;
+}
+
+button::before,
+button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+button::after {
+    height: 0;
+    left: 50%;
+    top: 50%;
+    width: 0;
+}
+
+button:hover:after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+/*
+boxes container
+*/
+
+div.boxes-container {
+    margin: 2em auto 2em auto;
+    width: 98%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+/*
+box
+*/
+
+div.boxes-container div {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em 0 1.5em 0;
+    position: relative;
+    animation-name: added;
+    animation-duration: 0.2s;
+    transition: all 0.2s linear;
+    border: 1px solid #FCE205;
+}
+
+
+/*
+little animation when a new box is added
+*/
+
+@keyframes added {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/*
+
+Alternate blue and black background boxes
+
+*/
+
+div.boxes-container div:nth-child(odd) {
+    background-color: darkblue;
+}
+
+div.boxes-container div:nth-child(even) {
+    background-color: black;
+}
+
+
+/*
+
+Every fifth box has some orange border
+
+*/
+
+div.boxes-container div:nth-child(5n)::before,
+div.boxes-container div:nth-child(5n)::after {
+    content: '';
+    left: 0;
+    right: 0;
+}
+
+div.boxes-container div:nth-child(5n)::before {
+    position: absolute;
+    top: 0;
+    height: 20px;
+    background: orange;
+}
+
+p {
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+}
+
+p.hide {
+    display: none;
+}
+
+#demo {
+    cursor: pointer;
+    background: #FCE205;
+    color: black;
+}
+
+div.box-count-container {
+    margin: 0 auto;
+    font-weight: bolder;
+    text-align: center;
+}
