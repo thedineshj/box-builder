@@ -4,6 +4,7 @@ Gramener - Box Builder Excercise | Front end intern
 # Live Demo
 
 For live demo,go to below link.
+All specified features are covered in the application.
 Note : it is a free hosting service,the application may not always be online
 http://sikshasuraksha.000webhostapp.com/boxbuilder/
 
